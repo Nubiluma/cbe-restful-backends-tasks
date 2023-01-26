@@ -14,9 +14,11 @@ html {
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 header {
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,10 +27,18 @@ header {
 }
 
 main {
+  height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+footer {
+  padding: 2rem 1rem;
+  width: 100vw;
+  background-color: azure;
+  text-align: center;
 }
 
 .heading {
@@ -48,6 +58,7 @@ main {
 
 .fetched-quote {
   width: 60vw;
+  height: 40vh;
   font-size: 4rem;
   margin-block: 3rem;
 }
@@ -55,4 +66,14 @@ main {
 .author {
   font-size: 3rem;
   color: rgb(152, 152, 152);
+}
+
+.site-nav {
+  padding: 2rem 1rem;
+}
+
+.site-nav a {
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  text-decoration: none;
 }
