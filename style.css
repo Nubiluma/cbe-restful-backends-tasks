@@ -19,6 +19,8 @@ body {
 
 header {
   text-align: center;
+  padding-block: 2rem;
+  background-color: orange;
 }
 
 main {
@@ -30,4 +32,40 @@ main {
 h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: rgb(9, 116, 165);
+  cursor: pointer;
+}
+
+.kata-list-header {
+  padding: 1rem;
+  margin-block: 2rem 0.5rem;
+}
+
+.kata-list {
+  list-style: none;
+  padding: 1rem 2rem;
+  margin: 0;
+}
+
+.kata-list li {
+  padding-block: 0.75rem;
+}
+
+.kata-list li::before {
+  content: "✨";
+}
+
+.kata-list li a {
+  text-decoration: none;
 }
