@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>LinkedIn Contacts</title>
   </head>
   <body>
     <main>
-      <section class="invitations-section"></section>
+      <section class="invitations-section">
+        <span class="pending-invitations-count"></span>
+        <button class="manage-btn">Manage</button>
+      </section>
       <section class="contacts-section"></section>
     </main>
+    <aside class="home-link-wrapper">
+      <a href="../" class="home-link"><i data-feather="home"></i></a>
+    </aside>
+    <script src="/home.svg"></script>
+    <script>
+      feather.replace();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

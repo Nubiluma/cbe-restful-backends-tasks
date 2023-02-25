@@ -32,6 +32,9 @@ section {
 
 .invitations-section {
   height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .contacts-section {
@@ -134,4 +137,23 @@ section {
   right: 1rem;
   top: 1rem;
   border: none;
+}
+
+.home-link-wrapper {
+  position: absolute;
+  border: 0.15rem solid black;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  padding-top: 0.6rem;
+  bottom: 0;
+  left: 0;
+}
+
+.home-link {
+  text-decoration: none;
+  color: black;
+}
+
+.home-link:hover {
+  color: rgba(0, 0, 0, 0.5);
 }

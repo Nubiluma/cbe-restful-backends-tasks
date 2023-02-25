@@ -1,8 +1,10 @@
 const state = {
   contacts: [],
+  pendingInvitations: [],
 };
 
 loadNewContacts(8);
+displayPendingInvitationsCount();
 
 /**************************************************************************************/
 
@@ -28,6 +30,36 @@ function removeFromContactSuggestions() {
   parentWrapperElement.remove();
   state.contacts.splice(contactIndex, 1);
   loadNewContacts(1);
+}
+
+function toggleUserInvitation() {
+  const parentWrapperElement = this.parentElement;
+  const contactIndex = parentWrapperElement.dataset.id;
+  const contact = state.contacts[contactIndex];
+
+  if (!state.pendingInvitations.includes(contact)) {
+    state.pendingInvitations.push(contact);
+  } else {
+    state.pendingInvitations.splice(
+      state.pendingInvitations.findIndex((e) => e === contact),
+      1
+    );
+  }
+
+  displayPendingInvitationsCount();
+  render();
+}
+
+function displayPendingInvitationsCount() {
+  const pendingInvitationsInfo = document.querySelector(
+    ".pending-invitations-count"
+  );
+  if (state.pendingInvitations.length > 0) {
+    pendingInvitationsInfo.innerText =
+      state.pendingInvitations.length + " pending invitations";
+  } else {
+    pendingInvitationsInfo.innerText = "No pending invitations";
+  }
 }
 
 function contactTemplate(contactData, contactIndex) {
@@ -92,8 +124,14 @@ function contactTemplate(contactData, contactIndex) {
 
   /** connect button */
   const connectButton = document.createElement("button");
-  connectButton.innerText = "Connect";
   connectButton.classList.add("connect-btn");
+  connectButton.addEventListener("click", toggleUserInvitation);
+
+  if (state.pendingInvitations.includes(contactData)) {
+    connectButton.innerText = "Pending";
+  } else {
+    connectButton.innerText = "Connect";
+  }
 
   imageWrapper.appendChild(userImage);
   wrapperElement.append(
