@@ -34,13 +34,6 @@ main {
   align-items: center;
 }
 
-footer {
-  padding: 2rem 1rem;
-  width: 100vw;
-  background-color: azure;
-  text-align: center;
-}
-
 .heading {
   font-size: 3.5rem;
   margin-inline: 1rem;
@@ -68,12 +61,21 @@ footer {
   color: rgb(152, 152, 152);
 }
 
-.site-nav {
-  padding: 2rem 1rem;
+.home-link-wrapper {
+  position: absolute;
+  border: 0.15rem solid black;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  padding-top: 0.6rem;
+  bottom: 0;
+  left: 0;
 }
 
-.site-nav a {
-  font-size: 1.5rem;
-  padding: 1rem 0.5rem;
+.home-link {
   text-decoration: none;
+  color: black;
+}
+
+.home-link:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
